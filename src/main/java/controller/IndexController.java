@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import mapper.UserMapper;
 import service.UserService;
+
 
 @Controller
 @RequestMapping("/")
@@ -41,7 +43,7 @@ public class IndexController {
 	
 	@RequestMapping("userInfo")
 	@ResponseBody  //这个表示不使用视图进行渲染
-	public Map getUserInfo(@RequestParam("id") String id){
+	public Map getUserInfo(@RequestParam("id") String id) throws Exception{
 		return userService.getUser(id);
 	}
 }
