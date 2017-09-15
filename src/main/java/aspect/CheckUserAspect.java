@@ -15,20 +15,20 @@ public class CheckUserAspect {
 
 	
 	//定义一个切点
-	@Pointcut("execution(* service.UserService.*(..))")
+	@Pointcut("execution(* service.UserService.*(String))&&args(userId)")
 	public void userPointCut(String userId){};
 	
 	//定义前置通知
-	@Before("userPointCut()&&args(userId,..)")
+	@Before("userPointCut(userId)")
 	public void beforeUser(JoinPoint jp,String userId){
 		if(userId.isEmpty())
 			throw new IllegalArgumentException("user id 不能为空");
 	}
 	
 	//定义后置通知
-	@AfterReturning(returning="user",pointcut="userPointCut()")
-	public void AfterUser(JoinPoint jp,Map user){
-		if(user.isEmpty())
+	@AfterReturning(returning="user",pointcut="userPointCut(userId)")
+	public void AfterUser(JoinPoint jp,String userId,Map user){
+		if(user == null ||user.isEmpty())
 			throw new IllegalArgumentException("user不存在");
 	}
 	
