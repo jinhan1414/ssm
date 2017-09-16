@@ -151,7 +151,14 @@
   </dependency> 
 
 
-
+<!-- ======================spring进行单元测试的配置======================================= -->
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-test</artifactId>
+    <version>${spring.version}</version>
+    <scope>test</scope>
+</dependency>
 
     
     

@@ -9,8 +9,6 @@
 	<classpath>
 		<dir name="C:/Users/jinchengsong/workspace/johns/ssm/target/classes">
 		</dir>
-		<dir name="C:/Users/jinchengsong/workspace/johns/ssm/target/test-classes">
-		</dir>
 	</classpath>
 
 	<web>
