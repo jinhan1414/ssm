@@ -1,21 +1,16 @@
 package controller;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
-import mapper.UserMapper;
+import domain.UserDomain;
 import service.UserService;
 
 
@@ -35,10 +30,10 @@ public class IndexController {
 	
 	@RequestMapping("maps")
 	@ResponseBody  //这个表示不使用视图进行渲染
-	public Map getMaps(@RequestParam("name") String name){
-		HashMap<String, String> hm = new HashMap<String, String>();
-		hm.put("name", name);
-		return hm;
+	public  UserDomain getMaps(@RequestParam("name") String name){		
+		UserDomain user = new UserDomain();
+		user.setName(name);
+		return user;
 	}
 	
 	@RequestMapping("userInfo")
