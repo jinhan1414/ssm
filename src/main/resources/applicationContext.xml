@@ -12,7 +12,8 @@
                       
    <!-- ====================开启注解的扫描：对指定的包进行注解的扫描，以进行自动的bean装配=============================================== -->  
   <context:component-scan base-package="service"></context:component-scan>   
-   
+  <!-- <context:component-scan base-package="javaConfig"></context:component-scan>  --> 
+  
   <!-- 数据源的beans的装配 -->
   <import resource="classpath:config/dataSource.xml"/>
   <import resource="classpath:beans/*.xml"/>   

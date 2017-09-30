@@ -4,6 +4,7 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
+import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,5 +41,13 @@ public class IndexController {
 	@ResponseBody  //这个表示不使用视图进行渲染
 	public Map getUserInfo(@RequestParam("id") String id) throws Exception{
 		return userService.getUser(id);
+	}
+	
+	@MessageMapping("/greeting")
+	public UserDomain greeting(UserDomain user){
+		
+		System.out.println("---------------"+user.getName()+"-------------------");
+		return user;
+		
 	}
 }

@@ -170,7 +170,25 @@
     <version>2.3.0</version>
 </dependency>
 
-    
+<!-- ================================spring的日志处理（具体的依赖看jar的依赖传递）==================== -->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-logging</artifactId>
+    <version>1.0.0.RELEASE</version>
+</dependency>    
+
+
+<!-- ================================spring的websocket配置==================== -->
+<dependency>
+     <groupId>org.springframework</groupId>
+     <artifactId>spring-messaging</artifactId>
+     <version>${spring.version}</version>
+ </dependency>
+ <dependency>
+     <groupId>org.springframework</groupId>
+     <artifactId>spring-websocket</artifactId>
+     <version>${spring.version}</version>
+</dependency>
     
   </dependencies>
   <build>
