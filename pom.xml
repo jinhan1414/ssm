@@ -189,6 +189,21 @@
      <artifactId>spring-websocket</artifactId>
      <version>${spring.version}</version>
 </dependency>
+
+<!-- ================================spring的webjars配置(使用jar的方式导入web资源（css、js）)==================== -->
+<!-- https://mvnrepository.com/artifact/org.webjars/webjars-locator -->
+<dependency>
+    <groupId>org.webjars</groupId>
+    <artifactId>webjars-locator</artifactId> <!-- 从前台html文件中移除资源的版本，方便资源版本的替换 -->
+    <version>0.30</version>
+</dependency>
+
+
+<dependency>
+    <groupId>org.webjars</groupId>
+    <artifactId>bootstrap</artifactId>
+    <version>3.3.7</version>
+</dependency>
     
   </dependencies>
   <build>

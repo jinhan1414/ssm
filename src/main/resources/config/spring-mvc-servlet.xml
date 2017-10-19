@@ -8,7 +8,7 @@
                         http://www.springframework.org/schema/context  
                         http://www.springframework.org/schema/context/spring-context-3.1.xsd  
                         http://www.springframework.org/schema/mvc  
-                        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+                        http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
                         
     <context:component-scan base-package="controller"></context:component-scan>    
           
@@ -31,16 +31,40 @@
 		</property>
 	</bean>
 	
+	<!-- 配置webjars的资源访问映射 -->
+	<!-- <mvc:annotation-driven/> -->
+	<mvc:resources mapping="/webjars/**"
+		location="classpath:META-INF/resources/webjars/">
 
+		<!-- 必须加 mvc:resource-chain这个标签 （需要http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd这个版本的springmvc的结构定义）， 
+			否则无法加载没有版本号的资源文件，http://blog.csdn.net/chao_1990/article/details/53449494 -->
+		<mvc:resource-chain resource-cache="false"
+			auto-registration="false">
+			<mvc:resolvers>
+				<bean
+					class="org.springframework.web.servlet.resource.WebJarsResourceResolver"></bean>
+				<bean
+					class="org.springframework.web.servlet.resource.PathResourceResolver"></bean>
+			</mvc:resolvers>
+		</mvc:resource-chain>
+	</mvc:resources>
+	
+	 
+	
 	<!-- 定义跳转的文件的前后缀 ，视图模式配置-->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<!-- 这里的配置我的理解是自动给后面action的方法return的字符串加上前缀和后缀，变成一个 可用的url地址 -->
-		<property name="prefix" value="/" />
-		<property name="suffix" value=".jsp" />
+		
+		<property name="prefix" value="/"  />
+		<property name="suffix" value=".jsp"  />
+		
 	</bean>
-	<mvc:default-servlet-handler/>
+	<mvc:default-servlet-handler />
 	<!-- 创建websocket的配置bean（java代码方式） -->
 	<bean class="javaConfig.WebsocketConfig"></bean>
+<!-- 	<bean class="javaConfig.MvcConfig"></bean> -->
 	<!-- 创建websocket的配置bean(xml方式) -->
 	<!-- <import resource="websocket.xml"/> -->
+	
+
 </beans>
