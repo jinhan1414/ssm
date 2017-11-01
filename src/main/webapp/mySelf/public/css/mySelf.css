@@ -1,0 +1,60 @@
+@CHARSET "UTF-8";
+@IMPORT url("common.css");
+#baseInformation{
+	height: 200px;
+}
+
+#personInformation{
+	margin-left: 200px;
+    margin-top: -100;
+}
+
+#selfHead{
+	height: 100px;
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+#works{
+	margin-left: 400px;
+    margin-top: -150px;
+    font-size: x-large;
+}
+.workImage{
+	height: 50px;
+}
+
+.work{
+	margin-right: 80px;
+	float:left;
+}
+
+#projectExperiences{
+	display: inline-block;
+	height: 300px;
+	margin-top: 80px;
+}
+
+.project{
+	margin-bottom: 30px;
+}
+
+#skills{
+	display: inline-block;
+	height: 200px;
+}
+
+#sideBar{
+	position: fixed;
+    margin-top: 50px;
+}
+
+.skill{
+	margin-bottom: 30px;
+}
+.skillLevels{
+	margin-top:20px;
+}
+.skillLevel{
+	display:inline-block;
+}

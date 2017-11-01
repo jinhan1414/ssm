@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+.label_br{
+	display: block;
+}
+.a_br{
+	display: block;
+	margin-bottom: 20px;
+	margin-left: 20px;
+}
+.leftDiv{
+	float: left;
+    width: 1200px;
+}
+.rightDiv{
+	margin-left: 1200px;
+	width: 500px;
+}

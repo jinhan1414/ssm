@@ -14,6 +14,7 @@
   </properties>
   
   
+  
   <dependencies>
 
 <!-- https://mvnrepository.com/artifact/org.testng/testng -->
@@ -204,7 +205,56 @@
     <artifactId>bootstrap</artifactId>
     <version>3.3.7</version>
 </dependency>
+
+<dependency>
+    <groupId>org.webjars</groupId>
+    <artifactId>jquery</artifactId>
+    <version>3.2.1</version>
+</dependency>
+
+<!-- 使用ztree作为前端树的生成器
+ztree:https://github.com/zTree/zTree_v3/
+ -->
+<dependency>
+    <groupId>org.webjars</groupId>
+    <artifactId>zTree</artifactId>
+    <version>3.5.28</version>
+</dependency>
     
+    
+<!-- ================================通过使用lombok包的注解达到减少getter/setter代码，简化pojo对象==================== -->    
+<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.16.18</version>
+    <scope>provided</scope>
+</dependency>
+
+<!-- ================================swagger文档服务
+http://blog.csdn.net/y534560449/article/details/53694443
+==================== -->    
+<dependency>  
+     <groupId>io.springfox</groupId>  
+     <artifactId>springfox-swagger2</artifactId>  
+     <version>2.4.0</version>  
+ </dependency>  
+ <dependency>  
+     <groupId>io.springfox</groupId>  
+     <artifactId>springfox-swagger-ui</artifactId>  
+     <version>2.4.0</version>  
+ </dependency> 
+<!-- jsp前台使用的jstl标签 -->
+<dependency>
+    <groupId>jstl</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+<dependency>
+    <groupId>taglibs</groupId>
+    <artifactId>standard</artifactId>
+    <version>1.1.2</version>
+</dependency>
   </dependencies>
   <build>
     <finalName>ssm</finalName>

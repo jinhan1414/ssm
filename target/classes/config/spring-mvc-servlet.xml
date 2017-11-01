@@ -25,7 +25,9 @@
                 <bean
 					class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter" />
                 <bean
-					class="org.springframework.http.converter.StringHttpMessageConverter" />
+					class="org.springframework.http.converter.StringHttpMessageConverter" >
+					<property name="supportedMediaTypes" value="text/html;charset=UTF-8"/>
+					</bean>
 
 			</list>
 		</property>
@@ -33,8 +35,9 @@
 	
 	<!-- 配置webjars的资源访问映射 -->
 	<!-- <mvc:annotation-driven/> -->
-	<mvc:resources mapping="/webjars/**"
+	<mvc:resources mapping="mySelf/webjars/**"
 		location="classpath:META-INF/resources/webjars/">
+		
 
 		<!-- 必须加 mvc:resource-chain这个标签 （需要http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd这个版本的springmvc的结构定义）， 
 			否则无法加载没有版本号的资源文件，http://blog.csdn.net/chao_1990/article/details/53449494 -->
@@ -49,6 +52,12 @@
 		</mvc:resource-chain>
 	</mvc:resources>
 	
+	<mvc:resources location="mySelf/public/**" mapping="mySelf/public/" >
+	</mvc:resources>
+	
+	<!-- 静态资源文件，不会被Spring MVC拦截 -->  
+<mvc:resources mapping="/swagger/**" location="/swagger/" />  
+	
 	 
 	
 	<!-- 定义跳转的文件的前后缀 ，视图模式配置-->
@@ -62,6 +71,14 @@
 	<mvc:default-servlet-handler />
 	<!-- 创建websocket的配置bean（java代码方式） -->
 	<bean class="javaConfig.WebsocketConfig"></bean>
+	<!-- 将 springSwaggerConfig加载到spring容器 -->  
+	<!-- <bean class="com.mangofactory.swagger.configuration.SpringSwaggerConfig" />   -->
+	
+	
+	<!-- 将自定义的swagger配置类加载到spring容器 -->  
+	<bean class="javaConfig.SwaggerConfig" /> 
+	
+	
 <!-- 	<bean class="javaConfig.MvcConfig"></bean> -->
 	<!-- 创建websocket的配置bean(xml方式) -->
 	<!-- <import resource="websocket.xml"/> -->

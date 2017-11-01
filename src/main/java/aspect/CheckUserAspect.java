@@ -21,15 +21,13 @@ public class CheckUserAspect {
 	//定义前置通知
 	@Before("userPointCut(userId)")
 	public void beforeUser(JoinPoint jp,String userId){
-		if(userId.isEmpty())
-			throw new IllegalArgumentException("user id 不能为空");
+		if(userId.isEmpty()) throw new IllegalArgumentException("user id 不能为空");
 	}
 	
 	//定义后置通知
 	@AfterReturning(returning="user",pointcut="userPointCut(userId)")
 	public void AfterUser(JoinPoint jp,String userId,Map user){
-		if(user == null ||user.isEmpty())
-			throw new IllegalArgumentException("user不存在");
+		if(user == null ||user.isEmpty()) throw new IllegalArgumentException("user不存在");
 	}
 	
 	//定义环绕通知
