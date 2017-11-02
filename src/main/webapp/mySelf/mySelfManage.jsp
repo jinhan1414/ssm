@@ -42,6 +42,9 @@
         <ul id="manageTree" class="ztree"></ul>
       </div>
       <div class="col-md-10">
+      <div>
+        <button >保存</button>
+      </div>
       <div class="row">
 	    <p class="h3">基本信息</p>
 		<div class="">
