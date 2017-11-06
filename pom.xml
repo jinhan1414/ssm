@@ -259,7 +259,8 @@ http://blog.csdn.net/y534560449/article/details/53694443
   <build>
     <finalName>ssm</finalName>
   </build>
-  <modules>
+  <modules> <!-- 多模块maven项目 参考：http://www.cnblogs.com/quanyongan/archive/2013/05/28/3103243.html -->
     <module>ssm-plugins-mySelf</module>
+    <module>ssm-web</module>
   </modules>
 </project>
